@@ -1,7 +1,7 @@
 export function getVersion() {
-    return '';
+    return 'v4';
 }
 
 export function getHostName() {
-    return '';
+    return 'unknown';
 }
