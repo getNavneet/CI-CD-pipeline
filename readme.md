@@ -13,3 +13,11 @@ for build
    - "build": "tsc && cp -R views dist/views"
 
 
+# continuous delivery and deployment 
+
+1. create a remote server (prefer not t2.micro)
+
+2. ssh -> create a directory(prefer at home)-> clone the git repository (cd pipeline require to pull latest `compose.yml` file from github)
+
+3. add server secrets inside github -> repo > settings > secrets & variable > actions
+
