@@ -76,7 +76,7 @@ jobs:
           port: ${{ secrets.SWARM_HOST_SSH_PORT }}
           script: |
             set -e
-            cd ~/bloggy
+            cd ~/app
 
             git fetch origin main
             git checkout origin/main
