@@ -27,7 +27,7 @@ services:
             - blog-app-net
 
     blog-server:
-        image: 'codersgyan/blog-app:v1'
+        image: 'navneetkumaryadav/bloggy-cicd:v1'
         deploy:
             replicas: 1
             update_config:
