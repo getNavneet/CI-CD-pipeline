@@ -38,6 +38,7 @@ jobs:
               uses: ad-m/github-push-action@master
               with:
                   github_token: ${{ steps.generate_token.outputs.token }}
+                  pull: true
 
             - name: Build docker image
               run: sudo docker build -t ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} --platform linux/amd64 .
