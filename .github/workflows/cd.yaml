@@ -48,6 +48,11 @@ jobs:
               with:
                   username: ${{secrets.DOCKERHUB_USERNAME}}
                   password: ${{secrets.DOCKERHUB_PASSWORD}}
+            - name: Debug docker login
+              run: |
+                 echo "User from secret: ${{ secrets.DOCKERHUB_USERNAME }}"
+                 echo "IMAGE_NAME: $IMAGE_NAME"
+                  
             - name: Push docker image to Docker Hub
               run: sudo docker push ${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}}
 
