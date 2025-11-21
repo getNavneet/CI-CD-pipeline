@@ -29,7 +29,7 @@ services:
     networks:
       - blog-app-net
   blog-server:
-    image: navneetkumaryadav/bloggy-cicd:build-171de081024c548cc1730b798a860a4c18bc24ec
+    image: navneetkumaryadav/bloggy-cicd:build-710e5ee3877f171987cd6de40bab7332b1094ce2
     deploy:
       replicas: 1
       update_config:
