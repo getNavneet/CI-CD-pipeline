@@ -3,7 +3,7 @@
     "dev": "nodemon index.ts",
     "lint": "npx eslint .",
     "test": "jest",
-    "build": "tsc && cp -R views dist/views",
+    "build": "tsc && cp -R views dist/views", 
     "prepare": "husky"
   },
   "dependencies": {
