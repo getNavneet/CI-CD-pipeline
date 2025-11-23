@@ -3,6 +3,6 @@
     email navneetkyadav40@gmail.com
 }
 
-devops-bloggy.xyz {
+blog.rugdi.in {
     reverse_proxy blog-server:3000
 }
