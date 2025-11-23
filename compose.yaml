@@ -29,7 +29,7 @@ services:
     networks:
       - blog-app-net
   blog-server:
-    image: navneetkumaryadav/bloggy-cicd:build-175c95a6c974a6a3871de672e74b171ee3eb38b5
+    image: navneetkumaryadav/bloggy-cicd:build-c913154222203464bc4fc9522b71d727e691a4d8
     deploy:
       replicas: 1
       update_config:
@@ -60,18 +60,17 @@ services:
       - NODE_HOST="{{.Node.Hostname}}"
     networks:
       - blog-app-net
-
   caddy:
-    image: 'caddy:2-alpine'
+    image: caddy:2-alpine
     deploy:
       replicas: 1
       update_config:
-          order: start-first
-          failure_action: rollback
-          delay: 10s
+        order: start-first
+        failure_action: rollback
+        delay: 10s
       rollback_config:
-          parallelism: 1
-          order: start-first
+        parallelism: 1
+        order: start-first
     ports:
       - '80:80'
       - '443:443'
@@ -83,7 +82,6 @@ services:
     configs:
       - source: Caddyfile
         target: /etc/caddy/Caddyfile
-
 volumes:
   blog-db-vol: null
   caddy_data: null
@@ -92,4 +90,4 @@ networks:
   blog-app-net: null
 configs:
   Caddyfile:
-    file: ./Caddyfile  
+    file: ./Caddyfile
