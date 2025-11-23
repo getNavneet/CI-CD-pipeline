@@ -49,7 +49,7 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.name github-actions
-          git config --local user.email github-action@github.com	Configure & manage system
+          git config --local user.email github-action@github.com	
           git add .
           git commit -m "bump the image version ${{ env.IMAGE_TAG }} [skip ci]"
 
