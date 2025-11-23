@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false
+          persist-credentials: false # if true, the token used is GITHUB_TOKEN
 
       - name: Build docker image
         run: docker build -t ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} --platform linux/amd64 .
@@ -49,7 +49,7 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.name github-actions
-          git config --local user.email github-action@github.com
+          git config --local user.email github-action@github.com	Configure & manage system
           git add .
           git commit -m "bump the image version ${{ env.IMAGE_TAG }} [skip ci]"
 
