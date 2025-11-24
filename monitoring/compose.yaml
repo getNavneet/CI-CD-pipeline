@@ -65,7 +65,7 @@ services:
         volumes:
             - grafana-storage:/var/lib/grafana
         environment:
-            - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_password
+            - GF_SECURITY_ADMIN_PASSWORD=hardcoded
         secrets:
             - grafana_password
         deploy:
@@ -98,8 +98,4 @@ networks:
         driver: overlay
         attachable: true
     bloggy_blog-app-net:
-        external: true
-
-secrets:
-    grafana_password:
         external: true
