@@ -84,6 +84,30 @@ services:
             interval: 30s
             timeout: 10s
             retries: 3
+    node-exporter:
+        image: prom/node-exporter:latest
+        deploy:
+        mode: global
+        resources:
+         limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+        networks:
+          - monitoring
+        volumes:
+          - /proc:/host/proc:ro
+          - /sys:/host/sys:ro
+          - /:/rootfs:ro
+        command:
+          - '--path.procfs=/host/proc'
+          - '--path.sysfs=/host/sys'
+          - '--collector.filesystem.ignored-mount-points="^/(sys|proc|dev|host|etc)($|/)"'
+        ports:
+        - target: 9100
+          published: 9100
+          protocol: tcp
+          mode: host
 
 volumes:
     grafana-storage:

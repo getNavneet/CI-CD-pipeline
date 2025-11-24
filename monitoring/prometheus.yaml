@@ -3,11 +3,11 @@ global:
     evaluation_interval: 15s
 
 scrape_configs:
-    - job_name: 'docker-daemon'
-      metrics_path: /metrics
-      static_configs:
-          - targets:
-                - '13.233.45.93:9323'
+    # - job_name: 'docker-daemon'
+    #   metrics_path: /metrics
+    #   static_configs:
+    #       - targets:
+    #             - '13.233.45.93:9323'
     - job_name: 'cadvisor'
       dns_sd_configs:
           - names: ['tasks.cadvisor']
